@@ -1,0 +1,19 @@
+<section class="container my-5">
+  <h2 class="text-center mb-4">Certificaciones</h2>
+  <div class="list-group">
+    @for (cert of certificaciones; track $index) {
+      <div class="list-group-item">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ cert.titulo }}</h5>
+          <small>{{ cert.fecha }}</small>
+        </div>
+        <p class="mb-1">{{ cert.descripcion }}</p>
+        @if (cert.enlace) {
+        <small>
+          <a [href]="cert.enlace" target="_blank">Ver certificado</a>
+        </small>
+      }
+      </div>
+    }
+  </div>
+</section>

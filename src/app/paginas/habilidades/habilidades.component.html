@@ -1,0 +1,16 @@
+<section class="container my-5">
+  <h2 class="text-center mb-4">Habilidades Técnicas</h2>
+  <div class="row">
+    @for (habilidad of habilidades; track $index) {
+      <div class="col-md-6 mb-3">
+        <div class="d-flex justify-content-between">
+          <strong>{{ habilidad.nombre }}</strong>
+          <span>{{ habilidad.nivel }}%</span>
+        </div>
+        <div class="progress">
+          <div class="progress-bar bg-info" role="progressbar" [style.width.%]="habilidad.nivel" [attr.aria-valuenow]="habilidad.nivel" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+    }
+  </div>
+</section>
