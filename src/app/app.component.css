@@ -1,0 +1,16 @@
+.sidebar-expanded {
+  margin-left: 270px; /* Ancho del sidebar expandido */
+  transition: margin-left 0.4s ease;
+}
+
+.sidebar-collapsed {
+  margin-left: 85px; /* Ancho del sidebar colapsado */
+  transition: margin-left 0.4s ease;
+}
+
+@media (max-width: 768px) {
+  .sidebar-expanded,
+  .sidebar-collapsed {
+    margin-left: 0; /* El sidebar se superpone, no empuja el contenido */
+  }
+}

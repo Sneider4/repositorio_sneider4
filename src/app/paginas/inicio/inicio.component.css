@@ -1,9 +1,36 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background-color: #f9f9f9;
-  color: #333;
+
+.titulo-principal {
+  font-family: 'Anton', sans-serif;
+  font-size: 55px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 20px 0;
+  text-shadow: 2px 2px 8px rgba(189, 189, 189, 0.3);
+  animation-delay: 0s;
 }
-section.inicio {
-  padding: 60px 20px;
+
+.parrafo {
+  font-size: 1.125rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: #bebebe;
+  animation-delay: 6.4s;
+}
+
+.typing {
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid rgb(255, 255, 255);
+  animation: typing 3s steps(40, end) forwards, blink 0.7s step-end infinite;
+  opacity: 0;
+}
+
+/* Animations */
+@keyframes typing {
+  from { width: 0; opacity: 1; }
+  to { width: 100%; opacity: 1; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
 }
