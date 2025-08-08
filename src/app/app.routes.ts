@@ -1,10 +1,27 @@
 import { Routes } from '@angular/router';
+import { HomeComponent } from './components/pages/home/home.component';
+import { NotFoundComponent } from './components/pages/not-found/not-found.component';
+import { ApiPikachuComponent } from './components/pages/api-pikachu/api-pikachu.component';
 
 export const routes: Routes = [
-  { path: '', loadComponent: () => import('./paginas/inicio/inicio.component').then(m => m.InicioComponent) },
-  { path: 'sobre-mi', loadComponent: () => import('./paginas/sobre-mi/sobre-mi.component').then(m => m.SobreMiComponent) },
-  { path: 'proyectos', loadComponent: () => import('./paginas/proyectos/proyectos.component').then(m => m.ProyectosComponent) },
-  { path: 'habilidades', loadComponent: () => import('./paginas/habilidades/habilidades.component').then(m => m.HabilidadesComponent) },
-  { path: 'certificaciones', loadComponent: () => import('./paginas/certificaciones/certificaciones.component').then(m => m.CertificacionesComponent) },
-  { path: 'contacto', loadComponent: () => import('./paginas/contacto/contacto.component').then(m => m.ContactoComponent) },
+  {
+    path: '',
+    redirectTo: 'inicio',
+    pathMatch: 'full'
+  },
+  {
+    path: 'inicio',
+    component: HomeComponent,
+    title: 'Inicio | Mi Portafolio'
+  },
+  {
+    path: 'pokeApi',
+    component: ApiPikachuComponent,
+    title: 'API de Pokemones | Mi Portafolio'
+  },
+  {
+    path: '**',
+    component: NotFoundComponent,
+    title: 'Página no encontrada'
+  },
 ];

@@ -1,0 +1,30 @@
+.footer-container {
+  color: #f0f0f0;
+  padding: 1rem;
+  text-align: center;
+
+
+  .footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+
+    a {
+      color: #f0f0f0;
+      font-size: 2rem;
+      transition: transform 0.2s ease, color 0.3s ease;
+
+      &:hover {
+        transform: scale(1.2);
+        color: #4b79f8;
+      }
+    }
+  }
+
+  .footer-copy {
+    font-size: 1rem;
+    color: #999999;
+    margin-top: 1rem;
+  }
+}

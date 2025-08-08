@@ -1,9 +1,15 @@
-<div [ngClass]="{'sidebar-collapsed': isSidebarCollapsed, 'sidebar-expanded': !isSidebarCollapsed}">
-  <div>
-    <app-navbar (sidebarToggle)="onSidebarToggle($event)"></app-navbar>
-  </div>
-  <div>
-    <router-outlet></router-outlet>
+<div class="d-flex" [class.sidebar-collapsed]="sidebarCollapsed">
+  <app-sidebar [collapsed]="sidebarCollapsed" (toggle)="toggleSidebar()"></app-sidebar>
+
+  <div class="flex-grow-1 d-flex flex-column" style="min-height: 100vh;">
+    <app-header></app-header>
+
+    <main class="flex-grow-1 p-4">
+      <router-outlet></router-outlet>
+    </main>
+
     <app-footer></app-footer>
   </div>
 </div>
+
+<app-loader></app-loader>

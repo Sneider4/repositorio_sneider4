@@ -1,21 +1,22 @@
-import { Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
+import { HeaderComponent } from "./components/core/layout/header/header.component";
+import { FooterComponent } from "./components/core/layout/footer/footer.component";
+import { SidebarComponent } from "./components/core/layout/sidebar/sidebar.component";
 import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from './compartido/navbar/navbar.component';
-import { FooterComponent } from './compartido/footer/footer.component';
-import { NgClass } from '@angular/common';
+import { LoaderComponent } from "./components/core/layout/loader/loader.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, FooterComponent, NgClass],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'],
+  imports: [HeaderComponent, RouterOutlet, FooterComponent, SidebarComponent, LoaderComponent]
 })
 export class AppComponent {
-  title = 'portafolio-richard';
 
-  isSidebarCollapsed = false;
+  title = '';
+  sidebarCollapsed = true;
 
-  onSidebarToggle(collapsed: boolean) {
-    this.isSidebarCollapsed = collapsed;
+  toggleSidebar() {
+    this.sidebarCollapsed = !this.sidebarCollapsed;
   }
 }

@@ -1,0 +1,38 @@
+.c-pokemon {
+  background: rgba(245, 245, 245, 0.6);
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.c-pokemon:hover {
+  transform: scale(1.05);
+}
+
+.id {
+    background-color: rgba(255, 255, 255, 0.4);
+    display: inline-block;
+    width: auto;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.pokemon-types {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.type {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  background-color: #d1d1d1;
+  color: #333333;
+  text-transform: capitalize;
+  cursor: pointer;
+}

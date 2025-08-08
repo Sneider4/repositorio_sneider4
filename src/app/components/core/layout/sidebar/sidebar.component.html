@@ -1,0 +1,36 @@
+<div class="sidebar text-white p-3 d-flex flex-column">
+  <button class="btn rounded-3 btn-outline-light mb-3" (click)="toggleSidebar()">
+    <i class="fas" [ngClass]="collapsed ? 'fa-bars' : 'fa-times'"></i>
+  </button>
+
+  <ul class="nav nav-pills flex-column">
+    <li class="nav-item item my-1" [routerLink]="['/inicio']" routerLinkActive="active"
+      [class.show-tooltip]="collapsed">
+      <a class="nav-link text-white fs-5">
+        <span class="icon-tooltip">
+          <i class="fas fa-home"></i>
+          <span class="tooltip-text">Inicio</span>
+        </span>
+        
+        @if (!collapsed) {
+        <span class="ms-2">Inicio</span>
+        }
+      </a>
+    </li>
+
+    <li class="nav-item item" [routerLink]="['/pokeApi']" routerLinkActive="active" [class.show-tooltip]="collapsed">
+      <a class="nav-link text-white fs-5">
+        <span class="icon-tooltip">
+          <i>
+            <img class="icon-img" src="assets/images/pokemon-icon.png" alt="">
+          </i>
+          <span class="tooltip-text">Api Pokemones</span>
+        </span>
+
+        @if (!collapsed) {
+        <span class="ms-2">Api Pokemones</span>
+        }
+      </a>
+    </li>
+  </ul>
+</div>
